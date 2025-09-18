@@ -15,5 +15,5 @@ match operation:
           print("Cannot divide by zero.")
       else:
           result = num1 / num2
-print("The results is", result)
+print("The result is", result)
 
