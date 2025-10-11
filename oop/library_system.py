@@ -4,7 +4,7 @@ class Book:
         self.author = author
 
     def __str__(self):
-        return f"{self.title} by {self.author}"
+        return f"Book: {self.title} by {self.author}"
 
 class EBook(Book):
     
@@ -13,7 +13,7 @@ class EBook(Book):
         self.file_size = file_size 
 
     def __str__(self):
-        return f"{self.title} by {self.author} [EBook, File size: {self.file_size}MB]"
+        return f"EBook: {self.title} by {self.author}, File size: {self.file_size}MB"
 
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
@@ -21,7 +21,7 @@ class PrintBook(Book):
         self.page_count = page_count  
 
     def __str__(self):
-        return f"{self.title} by {self.author} [PrintBook, Pages: {self.page_count}]"
+        return f"PrintBook: {self.title} by {self.author}, Pages: {self.page_count}"
 
 
 class Library:
@@ -31,11 +31,9 @@ class Library:
     def add_book(self, book):
         if isinstance(book, Book):
             self.books.append(book)
-            print(f"Added: {book}")
         else:
             print("Error: Only Book, EBook, or PrintBook instances can be added.")
 
     def list_books(self):
-        print("\nBooks in the Library:")
         for book in self.books:
-            print(f" - {book}")
+            print(book)
